@@ -101,40 +101,57 @@ A documentação do banco seguirá a abordagem de **entrega contínua**, sendo e
 
 Para a primeira fatia vertical (MVP), o Squad deverá entregar o **script de criação das tabelas ou coleções utilizadas**.
 
-#### 🔹 Para Banco Relacional (SQL)
+#### 🔹 Banco Relacional MySQL
 
-Incluir:
+* Diagrama Der
+  
+<img width="791" height="478" alt="image" src="https://github.com/user-attachments/assets/c1bcba0e-26fa-4991-a7b4-67f23aaa775f" />
 
-- Comandos `CREATE TABLE`
-- Definição de chave primária (PK)
-- Definição de chaves estrangeiras (FK)
 
-**Exemplo:**
+* Código SQL
 
 ```sql
-CREATE TABLE Usuario (
-    Id INT PRIMARY KEY,
-    Nome VARCHAR(100),
-    Email VARCHAR(150) UNIQUE,
-    Senha VARCHAR(200)
+
+CREATE TABLE FUNCIONARIO (
+    id_funcionario INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    data_cadastro DATETIME NOT NULL,
+    PRIMARY KEY (id_funcionario),
+    UNIQUE (cpf)
 );
+
+CREATE TABLE CLIENTE (
+    id_cliente INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(120) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    data_cadastro DATETIME NOT NULL,
+    PRIMARY KEY (id_cliente),
+    UNIQUE (cpf)
+);
+
+CREATE TABLE MEDICAO_PRESSAO (
+    id_medicao INT NOT NULL AUTO_INCREMENT,
+    id_cliente INT NOT NULL,
+    id_funcionario INT NOT NULL,
+    pressao_sistolica DECIMAL(4, 2) NOT NULL,
+    pressao_diastolica DECIMAL(4, 2) NOT NULL,
+    pulso INT NOT NULL,
+    data_hora DATETIME NOT NULL,
+    observacoes TEXT,
+    PRIMARY KEY (id_medicao),
+    FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
+    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
+);
+
 ```
 
 ---
-
-### Para Banco NoSQL
-
-Incluir a estrutura dos documentos JSON (Schema).
-
-**Exemplo:**
-
-```json
-{
-  "nome": "João Silva",
-  "email": "joao@email.com",
-  "senha": "hash_da_senha"
-}
-```
 
 ### 📁 Obrigatório
 
