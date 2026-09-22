@@ -27,18 +27,15 @@ Os **Requisitos Funcionais (RF)** descrevem o que o sistema deve fazer.
 
 ## Tabela de Requisitos Funcionais
 
-| ID    | Descrição do Requisito | Prioridade |
-|-------|------------------------|------------|
-| RF-01 | O sistema deve permitir que os usuários criem uma conta informando nome, e-mail, senha e endereço. | 🔴 ALTA |
-| RF-02 | O sistema deve permitir que os usuários adicionem produtos ao carrinho de compras. | 🟡 MÉDIA |
-| RF-03 | (Descreva aqui o requisito funcional 3 do seu sistema) | (Alta/Média/Baixa) |
-| RF-04 | (Descreva aqui o requisito funcional 4 do seu sistema) | (Alta/Média/Baixa) |
-| RF-05 | (Descreva aqui o requisito funcional 5 do seu sistema) | (Alta/Média/Baixa) |
-| RF-06 | (Descreva aqui o requisito funcional 6 do seu sistema) | (Alta/Média/Baixa) |
-| RF-07 | (Descreva aqui o requisito funcional 7 do seu sistema) | (Alta/Média/Baixa) |
-| RF-08 | (Descreva aqui o requisito funcional 8 do seu sistema) | (Alta/Média/Baixa) |
-| RF-09 | (Descreva aqui o requisito funcional 9 do seu sistema) | (Alta/Média/Baixa) |
-| RF-10 | (Descreva aqui o requisito funcional 10 do seu sistema) | (Alta/Média/Baixa) |
+| ID | Descrição Resumida | Dificuldade (B/M/A)* | Prioridade (B/M/A)* |
+| -- | ------------------ | -------------------- | ------------------- |
+| RF01 | Autenticação: o sistema deve permitir cadastro e login exclusivo do funcionário da farmácia. | B | A |
+| RF02 | Busca Rápida: o sistema deve permitir pesquisar clientes por nome, CPF ou telefone. | M | A |
+| RF03 | Cadastro Direto: o sistema deve permitir a inclusão simples de novos clientes no balcão. | B | A |
+| RF04 | Registro de Pressão: o sistema deve permitir a entrada dos valores de pressão sistólica, diastólica e pulso. | B | A |
+| RF05 | Histórico Cronológico: o sistema deve exibir as medições anteriores com data e hora. | M | M |
+| RF06 | Exportação: o sistema deve permitir a expostação dos registros através de wpp. | B | A |
+
 
 ---
 
@@ -55,41 +52,55 @@ Cada História de Usuário deve estar associada a um Requisito Funcional especí
 
 ---
 
-## Exemplos
-
-**História 1 (relacionada ao RF-01):**  
-Como usuário, quero registrar minhas tarefas para não esquecer de fazê-las.
-
-**História 2 (relacionada ao RF-02):**  
-Como administrador, quero alterar permissões para controlar o acesso ao sistema.
-
----
-
 ## Histórias do Projeto
 
 ---
 
 ### História 1 (relacionada ao RF-01)
 
-Como __________________________________________  
-Eu quero _______________________________________  
-Para que _______________________________________
+Como funcionário da farmácia,  
+Eu quero realizar meu cadastro e acessar o sistema com credenciais próprias,  
+Para que somente pessoas autorizadas possam consultar e registrar dados dos clientes.
 
 ---
 
 ### História 2 (relacionada ao RF-02)
 
-Como __________________________________________  
-Eu quero _______________________________________  
-Para que _______________________________________
+Como atendente de balcão,  
+Eu quero pesquisar um cliente por nome, CPF ou telefone,  
+Para que eu localize sua ficha rapidamente durante o atendimento.
 
 ---
 
-### História 3 (relacionada ao RF-__)
+### História 3 (relacionada ao RF-03)
 
-Como __________________________________________  
-Eu quero _______________________________________  
-Para que _______________________________________
+Como atendente de balcão,  
+Eu quero cadastrar um novo cliente diretamente no sistema,  
+Para que a medição possa ser registrada mesmo quando ele ainda não possuir ficha.
+
+---
+
+### História 4 (relacionada ao RF-04)
+
+Como farmacêutico ou atendente autorizado,  
+Eu quero informar os valores de pressão sistólica, diastólica e pulso obtidos na medição,  
+Para que o resultado do atendimento fique registrado de forma organizada.
+
+---
+
+### História 5 (relacionada ao RF-05)
+
+Como farmacêutico ou atendente autorizado,  
+Eu quero visualizar as medições anteriores do cliente em ordem cronológica,  
+Para que eu possa acompanhar a variação dos registros ao longo do tempo.
+
+---
+
+### História 6 (relacionada ao RF-06)
+
+Como funcionário da farmácia,  
+Eu quero exportar os registros de pressão pelo WhatsApp,  
+Para que o cliente possa receber e guardar seu histórico de medições.
 
 ---
 
@@ -113,14 +124,11 @@ Eles garantem a qualidade da solução.
 
 ## Tabela de Requisitos Não Funcionais
 
-| ID     | Descrição do Requisito | Prioridade |
-|--------|------------------------|------------|
-| RNF-01 | O sistema deve carregar as páginas em até 3 segundos. | 🟡 MÉDIA |
-| RNF-02 | O sistema deve proteger as informações dos clientes por meio de criptografia. | 🔴 ALTA |
-| RNF-03 | (Descreva aqui o requisito não funcional 3 do seu sistema) | (Alta/Média/Baixa) |
-| RNF-04 | (Descreva aqui o requisito não funcional 4 do seu sistema) | (Alta/Média/Baixa) |
-| RNF-05 | (Descreva aqui o requisito não funcional 5 do seu sistema) | (Alta/Média/Baixa) |
-| RNF-06 | (Descreva aqui o requisito não funcional 6 do seu sistema) | (Alta/Média/Baixa) |
+| ID | Descrição Resumida | Prioridade (B/M/A)* |
+| -- | ------------------ | ------------------- |
+| RNF01 | Agilidade: o fluxo completo de registro deve ser finalizado em até 40 segundos. | A |
+| RNF02 | Usabilidade: a interface deve ser clara e adaptada para telas de balcão e tablets. | A |
+| RNF03 | Segurança: o sistema deve restringir o acesso e proteger os dados de saúde. | A |
 
 ---
 
@@ -144,13 +152,13 @@ Elas podem envolver:
 | ID  | Restrição |
 |-----|-----------|
 | R-01 | O projeto deverá ser entregue até o final do semestre. |
-| R-02 | O sistema deve funcionar apenas dentro da rede interna da empresa. |
-| R-03 | O software deve ser compatível com Windows e Linux. |
-| R-04 | (Descreva aqui a restrição 4 do seu projeto) |
-| R-05 | (Descreva aqui a restrição 5 do seu projeto) |
-| R-06 | (Descreva aqui a restrição 6 do seu projeto) |
-| R-07 | (Descreva aqui a restrição 7 do seu projeto) |
-| R-08 | (Descreva aqui a restrição 8 do seu projeto) |
+| R-02 | O sistema será de uso interno da Drogaria Cruz e deverá ser acessado somente por funcionários autorizados. |
+| R-03 | A solução deverá ser compatível com os computadores e tablets disponíveis no balcão da farmácia. |
+| R-04 | O cliente não deverá criar conta, instalar aplicativo ou efetuar login para ter sua medição registrada. |
+| R-05 | Os dados pessoais e de saúde dos clientes deverão ser tratados conforme a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). |
+| R-06 | O sistema deverá registrar medições inseridas manualmente pelos funcionários; não faz parte do escopo a integração direta com aparelhos de pressão. |
+| R-07 | O FarmaPress Desk servirá para registro e consulta de medições e não realizará diagnóstico, prescrição ou orientação médica. |
+| R-08 | O envio de registros pelo WhatsApp dependerá da disponibilidade do serviço e de um canal de contato informado pelo cliente. |
 
 ---
 
@@ -158,11 +166,11 @@ Elas podem envolver:
 
 Antes de entregar, confirme:
 
-- [ ] Todos os RFs estão claros e numerados corretamente  
-- [ ] Todas as Histórias estão associadas a um RF  
-- [ ] RNFs estão mensuráveis  
-- [ ] Restrições são realmente limitações externas  
-- [ ] O documento está atualizado no GitHub  
+- [x] Todos os RFs estão claros e numerados corretamente  
+- [x] Todas as Histórias estão associadas a um RF  
+- [x] RNFs estão mensuráveis  
+- [x] Restrições são realmente limitações externas  
+- [x] O documento está atualizado no GitHub  
 
 ---
 
