@@ -1,4 +1,3 @@
-
 # 4. Projeto da Solução
 
 > ⚠️ **Aviso aos Squads (Software House)**
@@ -42,9 +41,9 @@ Descreva as tecnologias, linguagens, frameworks, bibliotecas e serviços escolhi
 
 | Dimensão | Tecnologia Escolhida |
 |----------|----------------------|
-| Banco de Dados (SGBD) | Ex: SQL Server, PostgreSQL ou MongoDB |
-| Back-end (API) | Ex: C# (.NET Core) |
-| Front-end / Mobile | Ex: HTML + CSS + JavaScript, React ou Flutter |
+| Banco de Dados (SGBD) | PostgreSQL |
+| Back-end (API) | Node.js |
+| Front-end / Mobile | React Native |
 | Hospedagem / Deploy | Ex: Azure, AWS, Render ou Railway |
 | Gestão e Versionamento | GitHub e GitHub Projects (Kanban) |
 
@@ -63,28 +62,31 @@ Cada Wireframe ou Mockups devem estar associados a pelo menos:
 - Um Requisito Funcional (RF-XX)
 - Uma História de Usuário
 
+## Tela de Login
 
-## 📌 Exemplo Ilustrativo – Tela de Cadastro (RF-01)
+<img width="330" height="657" alt="WhatsApp Image 2026-09-21 at 21 17 08" src="https://github.com/user-attachments/assets/79b83e18-4656-4b1f-b43c-14357c023123" />
 
-**História associada:** Como usuário, quero criar uma conta para acessar o sistema.
+## Tela de Cadastro de cliente cadastraddos
 
-Representação simplificada do Wireframe:
+<img width="320" height="667" alt="WhatsApp Image 2026-09-21 at 21 19 19" src="https://github.com/user-attachments/assets/e14e73fc-2518-424f-923a-af72fc0d5298" />
 
-<img src="images/TelaCadastro.png" width="80%">
 
-**Descrição:** A interface contempla todos os campos exigidos pelo RF-01 e permite persistência no banco após validação no backend.
+## Tela de Cadastro de Clientes
 
----
-🔧 **Ferramentas sugeridas:**
-- Figma  
-- MarvelApp  
-- Balsamiq  
----
+<img width="332" height="647" alt="WhatsApp Image 2026-09-21 at 21 19 47" src="https://github.com/user-attachments/assets/5b063ead-9e3a-43ff-b8f3-cc51315aca8b" />
 
-### 📎 Inserir AQUI Wireframes/ Mockups do Projeto de Software
+## Tela de Dados do cliente
 
-🚨 O grupo deverá inserir aqui a imagem
+<img width="327" height="657" alt="WhatsApp Image 2026-09-21 at 21 20 20" src="https://github.com/user-attachments/assets/c97e370b-9d2f-448f-b7d3-b6ff2d669685" />
 
+
+##Tela de nova Aferição de Pressão
+
+<img width="327" height="657" alt="WhatsApp Image 2026-09-21 at 21 20 20" src="https://github.com/user-attachments/assets/735c446c-df87-4389-b828-c9ef56769517" />
+
+## Tela de Exportação dos dados
+
+<img width="332" height="647" alt="WhatsApp Image 2026-09-27 at 19 45 36" src="https://github.com/user-attachments/assets/5928df13-99bc-488e-a151-704d1571dd54" />
 
 
 ---
