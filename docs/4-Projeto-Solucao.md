@@ -114,16 +114,16 @@ Para a primeira fatia vertical (MVP), o Squad deverá entregar o **script de cri
 
 ```sql
 
-CREATE TABLE FUNCIONARIO (
-    id_funcionario INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE FARMACIA (
+    id_farmacia INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
     email VARCHAR(150) NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    cpf VARCHAR(14) NOT NULL,
+    cnpj VARCHAR(14) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     data_cadastro DATETIME NOT NULL,
-    PRIMARY KEY (id_funcionario),
-    UNIQUE (cpf)
+    PRIMARY KEY (id_farmacia),
+    UNIQUE (cnpj)
 );
 
 CREATE TABLE CLIENTE (
@@ -140,7 +140,7 @@ CREATE TABLE CLIENTE (
 CREATE TABLE MEDICAO_PRESSAO (
     id_medicao INT NOT NULL AUTO_INCREMENT,
     id_cliente INT NOT NULL,
-    id_funcionario INT NOT NULL,
+    id_farmacia INT NOT NULL,
     pressao_sistolica DECIMAL(4, 2) NOT NULL,
     pressao_diastolica DECIMAL(4, 2) NOT NULL,
     pulso INT NOT NULL,
