@@ -107,7 +107,7 @@ Para a primeira fatia vertical (MVP), o Squad deverá entregar o **script de cri
 
 * Diagrama Der
   
-<img width="791" height="478" alt="image" src="https://github.com/user-attachments/assets/c1bcba0e-26fa-4991-a7b4-67f23aaa775f" />
+<img width="762" height="405" alt="image" src="https://github.com/user-attachments/assets/61b3edd1-0be0-45b3-b38d-8b12e1bc5d37" />
 
 
 * Código SQL
@@ -118,7 +118,6 @@ CREATE TABLE FARMACIA (
     id_farmacia INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
     email VARCHAR(150) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
     cnpj VARCHAR(14) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     data_cadastro DATETIME NOT NULL,
@@ -126,14 +125,26 @@ CREATE TABLE FARMACIA (
     UNIQUE (cnpj)
 );
 
+CREATE TABLE LOGIN (
+    id_login INT NOT NULL AUTO_INCREMENT,
+    id_farmacia INT NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    ultimo_login DATETIME NOT NULL,
+    data_prox_pagamento DATETIME NOT NULL,
+    PRIMARY KEY (id_login),
+    CONSTRAINT FOREIGN KEY (id_farmacia) REFERENCES FARMACIA(id_farmacia)
+);
+
 CREATE TABLE CLIENTE (
     id_cliente INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(120) NOT NULL,
+    id_farmacia INT NOT NULL,
     cpf VARCHAR(14) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     data_nascimento DATE NOT NULL,
     data_cadastro DATETIME NOT NULL,
     PRIMARY KEY (id_cliente),
+    FOREIGN KEY (id_farmacia) REFERENCES FARMACIA(id_farmacia)
     UNIQUE (cpf)
 );
 
@@ -148,7 +159,7 @@ CREATE TABLE MEDICAO_PRESSAO (
     observacoes TEXT,
     PRIMARY KEY (id_medicao),
     FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
-    FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
+    FOREIGN KEY (id_farmacia) REFERENCES FARMACIA(id_farmacia)
 );
 
 ```
